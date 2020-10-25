@@ -72,8 +72,60 @@
         </div>
 
     </div>
+    <!-- Write HTML for each loops: template
+        myQuestions.forEach( (currentQuestion, questionNumber) => {
+        // the code we want to run for each question goes here
+      }); --
+      
+      // code inside loop: we'll want to store the list of answer choices
+      const answers = [];
+      
+      // and for each available answer...
+      for(letter in currentQuestion.answers){
+      
+        // ...add an html radio button
+        answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
+      
+      // add this question and its answers to the output
+      output.push(
+        `<div class="question"> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join('')} </div>`
+      );
+        //For each question, we’ll want to generate the correct HTML
+        //create an array to hold the list of possible answers.
+        //use a loop to fill in the possible answers for the current question. 
+        //For each choice, we’re creating an HTML radio button, which we enclose in a <label> element. 
+        //This is so that users will be able to click anywhere on the answer text to select that answer. 
+        //If the label was omitted, then users would have to click on the radio button itself, 
+        //which is not very accessible.
+        //**Notice we’re using template literals, which are strings but more powerful. 
 
-
+        //We’ll make use of the following features:
+        //multi-line capabilities
+        //no more having to escape quotes within quotes because template literals use backticks instead of 
+        //string interpolation, so you can embed JavaScript expressions right into your strings like this
+        // ${code_goes_here}.
+        
+        //Once we have our list of answer buttons, we can push the question HTML and the answer HTML onto our overall list of outputs.
+        //Notice that we’re using a template literal and some embedded expressions to first create the question div and then create the answer div. The join expression takes our list of answers and puts them together in one string that we can output into our answers div.
+        //Now that we’ve generated the HTML for each question, we can join it all together and show it on the page:
+      
+      quizContainer.innerHTML = output.join('');
+      Now our buildQuiz function is complete.
+      
+      //You should be able to run the quiz at this point and see the questions displayed. 
+      //Please note, however, that the structure of your code is important. 
+      //Due to something called the temporal dead zone, you can’t reference your questions array 
+      //before it has been defined. -->
+      
+      
     <script src="script.js"></script>
 
 
