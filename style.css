@@ -1,11 +1,15 @@
-#wrapper {
+/* #wrapper {
     position: absolute;
     left: 30%;
     top: 20%;
     width: 500px;
     height: 500px;
     border: 1px solid blue;
+}*/
+#submit{
+    display: none;
 }
+/*
 #startTime {
     background-color: red;
     margin-left: 33%;
@@ -137,4 +141,4 @@ a {
 }
 
 
-}
+} */
